@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pathfinder Feats</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.28.1/dist/cytoscape.min.js"></script>
+</head>
+
+<body>
+
+  <h1>Pathfinder Feats Web</h1>
+
+  <div id="cy" class="main"></div>
+  <div class="tools">
+    <h2>Data</h2>
+
+    <p>The <a target="_blank" href="http://js.cytoscape.org/#notation/elements-json">data</a> specifies what should be
+      put in
+      the graph. Select between one of the example data sets or specify your own custom data in the code.</p>
+
+    <label for="data" class="tooltip u-pull-left" title="Switch to a new dataset">Active dataset</label>
+    <div class="u-cf"></div>
+    <select class id="data">
+      <option value="social.json" selected>Social</option>
+      <option value="genes.json">Genes</option>
+      <option value="custom.json">Custom</option>
+    </select>
+  </div>
+
+  <script src="code.js"></script>
+</body>
+
+</html>
