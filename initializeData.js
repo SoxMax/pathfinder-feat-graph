@@ -26,7 +26,7 @@ async function initializeGraph() {
   const duplicates = Map.groupBy(nodes, ({ id }) => id).entries().toArray().filter(entry => entry[1].length > 1)
   console.log("Duplicates", duplicates)
   console.log("Nodes", nodes, "Links", links)
-  cy.add({ group: 'nodes', data: { id: "weaponProficiency" } })
+  cy.add({ group: 'nodes', data: { id: "weaponProficiency", name: "Weapon Proficiency" } })
   cy.add(nodes.map(node => ({ group: 'nodes', data: node })))
   cy.add(links.map(link => ({ group: 'edges', data: link })))
   console.log(cy.json())
