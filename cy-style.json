@@ -10,7 +10,14 @@
       "text-halign": "center",
       "shape": "round-octagon",
       "height": 40,
-      "width": 200
+      "width": 160,
+      "display": "none"
+    }
+  },
+  {
+    "selector": ".visible",
+    "style": {
+      "display": "element"
     }
   }
 ]
