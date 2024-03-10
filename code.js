@@ -7,9 +7,7 @@ const cy = cytoscape({
 })
 
 function findFeats(featName) {
-  return cy.filter(function (element, i) {
-    return element.isNode() && element.data('name').toLowerCase().includes(featName);
-  });
+  return cy.nodes(`[name @*= '${featName}']`)
 }
 
 document.getElementById('search').addEventListener("change", event => {
