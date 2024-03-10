@@ -1,0 +1,16 @@
+[
+  {
+    "selector": "node",
+    "style": {
+      "label": "data(name)",
+      "color": "#fff",
+      "text-outline-color": "#888",
+      "text-outline-width": 3,
+      "text-valign": "center",
+      "text-halign": "center",
+      "shape": "round-octagon",
+      "height": 40,
+      "width": 200
+    }
+  }
+]
