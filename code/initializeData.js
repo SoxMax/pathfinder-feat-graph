@@ -13,7 +13,7 @@ function prerequisiteId(prerequisite) {
 }
 
 async function initializeGraph() {
-  const feats = await fetch('Feats-19Jan2020.json').then(res => res.json())
+  const feats = await fetch('data/Feats-19Jan2020.json').then(res => res.json())
   const nodes = feats.filter(feat => feat.type.toLowerCase() != "mythic")
     .map(feat => {
       feat.id = feat.name.toCamelCase()

@@ -1,7 +1,7 @@
 const cy = cytoscape({
   container: document.getElementById('cy'), // container to render in
-  elements: fetch('mst.json').then(res => res.json()),
-  style: fetch('cy-style.json').then(res => res.json()),
+  elements: fetch('data/mst.json').then(res => res.json()),
+  style: fetch('style/cy-style.json').then(res => res.json()),
   layout: { name: 'grid' },
   autoungrabify: true
 })
