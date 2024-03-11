@@ -42,6 +42,14 @@ body {
   cursor: pointer;
 }
 
+.feat-section {
+  padding-bottom: 0.5em;
+}
+
+.feat-subheading {
+  font-weight: bold;
+}
+
 h1 {
   margin: 0 0.125em;
   position: absolute;
