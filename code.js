@@ -9,7 +9,6 @@ const cy = cytoscape({
 function searchFeats(featName) {
   const feats = cy.nodes(`[name @*= '${featName}']`)
   const feat = feats.first()
-  console.log(feat.predecessors().jsons(), feat.successors().jsons())
   const featNeighbors = feat.predecessors().union(feat.successors()).union(feat)
   cy.nodes().removeClass('visible')
   featNeighbors.nodes().addClass('visible')
@@ -22,3 +21,22 @@ function searchFeats(featName) {
 document.getElementById('search').addEventListener("change", event => {
   searchFeats(event.target.value)
 })
+
+function pruneNode(node) {
+  const incomers = node.incomers()
+  const depdeps = new Set()
+  incomers.nodes().forEach(incomingFeat => {
+    incomingFeat.incomers().nodes().forEach(ele => depdeps.add(ele.data('id')))
+  })
+  if (depdeps.size > 0) {
+    const dupeEdges = incomers.filter(ele => ele.isEdge() && depdeps.has(ele.data('source'))).remove()
+    incomers.difference(dupeEdges).forEach(remainingNode => pruneNode(remainingNode))
+  }
+}
+
+function prunePrereqs(event) {
+  cy.nodes().leaves().forEach(leaf => pruneNode(leaf))
+  // cy.elements().addClass('visible').layout({name: 'concentric'}).run()
+}
+
+cy.on("ready", prunePrereqs) 
