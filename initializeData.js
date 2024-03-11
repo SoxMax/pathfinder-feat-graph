@@ -25,11 +25,40 @@ async function initializeGraph() {
 
   const duplicates = Map.groupBy(nodes, ({ id }) => id).entries().toArray().filter(entry => entry[1].length > 1)
   console.log("Duplicates", duplicates)
-  console.log("Nodes", nodes, "Links", links)
   cy.add({ group: 'nodes', data: { id: "weaponProficiency", name: "Weapon Proficiency" } })
   cy.add(nodes.map(node => ({ group: 'nodes', data: node })))
   cy.add(links.map(link => ({ group: 'edges', data: link })))
-  console.log(cy.json())
 }
 
-// initializeGraph()
+function pruneNode(node) {
+  const incomers = node.incomers()
+  const depdeps = new Set()
+  incomers.nodes().forEach(incomingFeat => {
+    incomingFeat.incomers().nodes().forEach(ele => depdeps.add(ele.data('id')))
+  })
+  if (depdeps.size > 0) {
+    const dupeEdges = incomers.filter(ele => ele.isEdge() && depdeps.has(ele.data('source'))).remove()
+    incomers.difference(dupeEdges).forEach(remainingNode => pruneNode(remainingNode))
+  }
+}
+
+function pruneLinks() {
+  cy.nodes().leaves().forEach(leaf => pruneNode(leaf))
+  // cy.elements().addClass('visible').layout({name: 'concentric'}).run()
+}
+
+function minimumExport(cyExport) {
+  return {
+    nodes: cyExport.elements.nodes.map(ele => ele.data),
+    edges: cyExport.elements.edges.map(ele => ele.data)
+  }
+}
+
+async function main() {
+  await initializeGraph()
+  console.log("Initialized", minimumExport(cy.json(false)))
+  pruneLinks()
+  console.log("Pruned", minimumExport(cy.json(false)))
+}
+
+main()
