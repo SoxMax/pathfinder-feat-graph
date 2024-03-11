@@ -14,7 +14,9 @@ const search = new autoComplete({
   },
   resultItem: {
     highlight: true,
-  }, events: {
+  },
+  submit: true,
+  events: {
     input: {
       selection: (event) => {
         const selection = event.detail.selection.value;
