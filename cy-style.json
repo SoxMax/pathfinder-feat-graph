@@ -10,7 +10,7 @@
       "text-halign": "center",
       "shape": "round-octagon",
       "height": 40,
-      "width": 160,
+      "width": 100,
       "display": "none"
     }
   },
@@ -18,6 +18,13 @@
     "selector": ".visible",
     "style": {
       "display": "element"
+    }
+  },
+  {
+    "selector": "edge",
+    "style": {
+      "curve-style": "straight",
+      "target-arrow-shape": "triangle-backcurve"
     }
   }
 ]
