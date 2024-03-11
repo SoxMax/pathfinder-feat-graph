@@ -1,6 +1,6 @@
 const cy = cytoscape({
   container: document.getElementById('cy'), // container to render in
-  elements: fetch('data.json').then(res => res.json()),
+  elements: fetch('mst.json').then(res => res.json()),
   style: fetch('cy-style.json').then(res => res.json()),
   layout: { name: 'grid' },
   autoungrabify: true
@@ -13,8 +13,10 @@ function searchFeats(featName) {
   cy.nodes().removeClass('visible')
   featNeighbors.nodes().addClass('visible')
   featNeighbors.layout({
-    name: 'cola',
-    rankDir: 'LR'
+    name: 'dagre',
+    rankDir: 'LR',
+    rankSep: 150,
+    nodeDimensionsIncludeLabels: true,
   }).run()
 }
 
@@ -37,6 +39,7 @@ function pruneNode(node) {
 function prunePrereqs(event) {
   cy.nodes().leaves().forEach(leaf => pruneNode(leaf))
   // cy.elements().addClass('visible').layout({name: 'concentric'}).run()
+  console.log(cy.elements().jsons())
 }
 
-cy.on("ready", prunePrereqs) 
+// cy.on("ready", prunePrereqs) 
