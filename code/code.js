@@ -12,13 +12,14 @@ function searchFeats(featName) {
   const featNeighbors = feat.predecessors().union(feat.successors()).union(feat);
   cy.nodes().removeClass('visible');
   featNeighbors.nodes().addClass('visible');
-  featNeighbors.layout({
+  const dagre = {
     name: 'dagre',
     rankDir: 'LR',
     nodeSep: 50,
     rankSep: 150,
     nodeDimensionsIncludeLabels: true,
-  }).run();
+  };
+  featNeighbors.layout(dagre).run();
 }
 
 function setFeatSection(featData, section) {
