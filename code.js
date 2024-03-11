@@ -15,6 +15,7 @@ function searchFeats(featName) {
   featNeighbors.layout({
     name: 'dagre',
     rankDir: 'LR',
+    nodeSep: 50,
     rankSep: 150,
     nodeDimensionsIncludeLabels: true,
   }).run()

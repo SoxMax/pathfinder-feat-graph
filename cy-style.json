@@ -8,6 +8,8 @@
       "text-outline-width": 3,
       "text-valign": "center",
       "text-halign": "center",
+      "text-wrap": "wrap",
+      "text-max-width": 100,
       "shape": "round-octagon",
       "height": 40,
       "width": 100,
