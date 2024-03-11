@@ -6,6 +6,26 @@ const cy = cytoscape({
   autoungrabify: true
 });
 
+const search = new autoComplete({
+  selector: "#search",
+  placeHolder: "Search...",
+  data: {
+    src: fetch('data/mst.json').then(res => res.json()).then(graphData => graphData.nodes.map(node => node.data.name))
+  },
+  resultItem: {
+    highlight: true,
+  },
+  submit: true,
+  events: {
+    input: {
+      selection: (event) => {
+        const selection = event.detail.selection.value;
+        search.input.value = selection;
+      }
+    }
+  }
+});
+
 function searchFeats(featName) {
   const feats = cy.nodes(`[name @*= '${featName}']`);
   const feat = feats.first();
