@@ -21,9 +21,35 @@ function searchFeats(featName) {
   }).run()
 }
 
+function setFeatSection(featData, section) {
+  const htmlSection = document.getElementById(`feat-${section}-section`)
+  const htmlText = document.getElementById(`feat-${section}`)
+  const sectionEntry = featData[section]
+  if(sectionEntry) {
+    htmlText.textContent = sectionEntry
+    htmlSection.hidden = false
+  } else {
+    htmlSection.hidden = true
+  }
+}
+
+function displayFeat(featNode) {
+  const featData = featNode.data()
+  document.getElementById('feat-name').textContent = featData.name
+  setFeatSection(featData, 'description')
+  setFeatSection(featData, 'prerequisites')
+  setFeatSection(featData, 'benefit')
+  setFeatSection(featData, 'normal')
+  setFeatSection(featData, 'special')
+}
+
 document.getElementById('search').addEventListener("change", event => {
   searchFeats(event.target.value)
 })
+
+cy.on('select', 'node', function(event){
+  displayFeat(event.target)
+});
 
 cy.ready(event => {
   console.log("Graph Loaded!")
