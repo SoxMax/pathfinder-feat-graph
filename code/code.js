@@ -45,7 +45,7 @@ function displayFeat(featNode) {
 
 document.getElementById('search').addEventListener("change", event => {
   searchFeats(event.target.value);
-})
+});
 
 cy.on('select', 'node', function (event) {
   displayFeat(event.target);
@@ -53,4 +53,4 @@ cy.on('select', 'node', function (event) {
 
 cy.ready(event => {
   console.log("Graph Loaded!");
-})
+});
