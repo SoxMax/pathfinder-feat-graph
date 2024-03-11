@@ -24,3 +24,7 @@ function searchFeats(featName) {
 document.getElementById('search').addEventListener("change", event => {
   searchFeats(event.target.value)
 })
+
+cy.ready(event => {
+  console.log("Graph Loaded!")
+})
