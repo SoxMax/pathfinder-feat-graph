@@ -1,6 +1,6 @@
 String.prototype.toCamelCase = function toCamelCase() {
   return this.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
-}
+};
 
 const cy = cytoscape({
   container: document.getElementById('cy'), // container to render in
@@ -32,11 +32,11 @@ async function initializeGraph() {
 }
 
 function pruneNode(node) {
-  const incomers = node.incomers()
-  const depdeps = new Set()
+  const incomers = node.incomers();
+  const depdeps = new Set();
   incomers.nodes().forEach(incomingFeat => {
     incomingFeat.incomers().nodes().forEach(ele => depdeps.add(ele.data('id')));
-  })
+  });
   if (depdeps.size > 0) {
     const dupeEdges = incomers.filter(ele => ele.isEdge() && depdeps.has(ele.data('source'))).remove();
     incomers.difference(dupeEdges).forEach(remainingNode => pruneNode(remainingNode));
