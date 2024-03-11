@@ -19,6 +19,7 @@ async function initializeGraph() {
       feat.id = feat.name.toCamelCase()
       feat.prerequisite_feats = feat.prerequisite_feats.split(/(?:,|\|)+/).map(prereq => prerequisiteId(prereq)).filter(prereq => prereq)
       delete feat.style
+      delete feat.source
       return feat
     })
   const links = nodes.flatMap(feat => (feat.prerequisite_feats.map(prereq => ({ id: feat.id + '|' + prereq, source: prereq, target: feat.id }))))
@@ -49,16 +50,18 @@ function pruneLinks() {
 
 function minimumExport(cyExport) {
   return {
-    nodes: cyExport.elements.nodes.map(ele => ele.data),
-    edges: cyExport.elements.edges.map(ele => ele.data)
+    nodes: cyExport.elements.nodes.map(ele => ({data: ele.data})),
+    edges: cyExport.elements.edges.map(ele => ({data: ele.data}))
   }
 }
 
 async function main() {
   await initializeGraph()
-  console.log("Initialized", minimumExport(cy.json(false)))
+  const initialized = minimumExport(cy.json(false))
+  console.log("Initialized", initialized)
   pruneLinks()
-  console.log("Pruned", minimumExport(cy.json(false)))
+  const pruned = minimumExport(cy.json(false))
+  console.log("Pruned", pruned)
 }
 
 main()
