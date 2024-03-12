@@ -5,14 +5,14 @@
       "label": "data(name)",
       "color": "#fff",
       "text-outline-color": "#888",
-      "text-outline-width": 3,
+      "text-outline-width": 1,
       "text-valign": "center",
       "text-halign": "center",
       "text-wrap": "wrap",
       "text-max-width": 100,
       "shape": "round-octagon",
       "height": 40,
-      "width": 100,
+      "width": 80,
       "display": "none"
     }
   },
@@ -26,7 +26,8 @@
     "selector": "edge",
     "style": {
       "curve-style": "straight",
-      "target-arrow-shape": "triangle-backcurve"
+      "target-arrow-shape": "triangle-backcurve",
+      "events": "no"
     }
   }
 ]
