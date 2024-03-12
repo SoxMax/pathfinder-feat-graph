@@ -62,6 +62,7 @@ function displayFeat(featNode) {
   setFeatSection(featData, 'benefit');
   setFeatSection(featData, 'normal');
   setFeatSection(featData, 'special');
+  document.getElementById('feat-info').classList.remove('d-none');
 }
 
 document.getElementById('search').addEventListener("change", event => {
