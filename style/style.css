@@ -11,7 +11,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  right: 20em;
+  right: 0;
   bottom: 0;
   z-index: 1;
 }
@@ -22,11 +22,10 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-  bottom: 0;
   width: 20em;
   background: #fff;
   border-left: 1px solid #ddd;
-  z-index: 1;
+  z-index: 2;
   overflow: auto;
 }
 
