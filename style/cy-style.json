@@ -8,8 +8,8 @@
       "text-outline-width": 1,
       "text-valign": "center",
       "text-halign": "center",
-      "text-wrap": "wrap",
       "text-max-width": 100,
+      "text-justification": "center",
       "shape": "round-octagon",
       "height": 40,
       "width": 80,
@@ -33,7 +33,8 @@
   {
     "selector": ":selected",
     "style": {
-      "background-color": "#0d6efd"
+      "background-color": "#0d6efd",
+      "text-outline-color": "#0d6efd"
     }
   }
 ]
