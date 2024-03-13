@@ -66,6 +66,7 @@ function displayFeat(featNode) {
   setFeatSection(featData, 'normal');
   setFeatSection(featData, 'special');
   document.getElementById('feat-info').classList.remove('d-none');
+  featNode.neighborhood('edge').select()
 }
 
 document.getElementById('search').addEventListener("change", event => {
