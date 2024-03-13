@@ -32,9 +32,9 @@ const search = new autoComplete({
 
 function searchFeats(featName) {
   const feat = cy.getElementById(featName.toCamelCase());
-  const featNeighbors = feat.predecessors().union(feat.successors()).union(feat);
+  const featTree = feat.predecessors().union(feat.successors()).union(feat);
   cy.nodes().removeClass('visible');
-  featNeighbors.nodes().addClass('visible');
+  featTree.nodes().addClass('visible');
   const dagre = {
     name: 'dagre',
     rankDir: 'LR',
@@ -42,7 +42,7 @@ function searchFeats(featName) {
     rankSep: 150,
     nodeDimensionsIncludeLabels: true,
   };
-  featNeighbors.layout(dagre).run();
+  featTree.layout(dagre).run();
 }
 
 function setFeatSection(featData, section) {
