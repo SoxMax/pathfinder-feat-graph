@@ -17,17 +17,23 @@
     }
   },
   {
+    "selector": "edge",
+    "style": {
+      "curve-style": "straight",
+      "target-arrow-shape": "triangle-backcurve",
+      "events": "no"
+    }
+  },
+  {
     "selector": ".visible",
     "style": {
       "display": "element"
     }
   },
   {
-    "selector": "edge",
+    "selector": ".selected",
     "style": {
-      "curve-style": "straight",
-      "target-arrow-shape": "triangle-backcurve",
-      "events": "no"
+      
     }
   }
 ]

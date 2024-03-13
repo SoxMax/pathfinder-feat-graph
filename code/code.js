@@ -1,3 +1,7 @@
+String.prototype.toCamelCase = function toCamelCase() {
+  return this.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+};
+
 const cy = cytoscape({
   container: document.getElementById('cy'), // container to render in
   elements: fetch('data/mst.json').then(res => res.json()),
@@ -27,8 +31,7 @@ const search = new autoComplete({
 });
 
 function searchFeats(featName) {
-  const feats = cy.nodes(`[name @*= '${featName}']`);
-  const feat = feats.first();
+  const feat = cy.getElementById(featName.toCamelCase());
   const featNeighbors = feat.predecessors().union(feat.successors()).union(feat);
   cy.nodes().removeClass('visible');
   featNeighbors.nodes().addClass('visible');
