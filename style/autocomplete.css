@@ -64,6 +64,7 @@
   background-color: transparent;
   color: rgba(255, 122, 122, 1);
   font-weight: bold;
+  padding:0;
 }
 
 .autoComplete_wrapper > ul > li mark::selection {
