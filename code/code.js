@@ -89,6 +89,10 @@ cy.on('select', 'node', function (event) {
   displayFeat(event.target);
 });
 
+cy.on('unselect', 'node', function (event) {
+  document.getElementById('feat-info').classList.add('d-none');
+});
+
 cy.ready(event => {
   console.log("Graph Loaded!");
 });
