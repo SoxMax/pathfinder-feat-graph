@@ -35,6 +35,7 @@ const search = new autoComplete({
 });
 
 function searchFeats(featName) {
+  document.getElementById("splash").remove();
   const feat = cy.getElementById(featName.toCamelCase());
   const featTree = feat.predecessors().union(feat.successors()).union(feat);
   cy.nodes().removeClass('visible');
