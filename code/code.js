@@ -7,7 +7,10 @@ const cy = cytoscape({
   elements: fetch('data/mst.json').then(res => res.json()),
   style: fetch('style/cy-style.json').then(res => res.json()),
   layout: { name: 'grid' },
-  autoungrabify: true
+  autoungrabify: true,
+  minZoom: 0.2,
+  maxZoom: 5,
+  wheelSensitivity: 0.5,
 });
 
 const search = new autoComplete({
@@ -32,6 +35,7 @@ const search = new autoComplete({
 });
 
 function searchFeats(featName) {
+  document.getElementById("splash").remove();
   const feat = cy.getElementById(featName.toCamelCase());
   const featTree = feat.predecessors().union(feat.successors()).union(feat);
   cy.nodes().removeClass('visible');
