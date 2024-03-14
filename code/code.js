@@ -8,7 +8,7 @@ const cy = cytoscape({
   style: fetch('style/cy-style.json').then(res => res.json()),
   layout: { name: 'grid' },
   autoungrabify: true,
-  minZoom: -1,
+  minZoom: 0.2,
   maxZoom: 5,
   wheelSensitivity: 0.5,
 });
