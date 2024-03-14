@@ -34,7 +34,7 @@
     "selector": ":selected",
     "style": {
       "background-color": "#0d6efd",
-      "text-outline-color": "#0d6efd"
+      "text-outline-color": "#0261ed"
     }
   }
 ]
