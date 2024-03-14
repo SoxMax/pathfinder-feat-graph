@@ -10,6 +10,7 @@
       "text-halign": "center",
       "text-max-width": 100,
       "text-justification": "center",
+      "text-wrap": "wrap",
       "shape": "round-octagon",
       "height": 40,
       "width": 80,
