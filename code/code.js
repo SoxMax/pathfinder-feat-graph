@@ -7,7 +7,10 @@ const cy = cytoscape({
   elements: fetch('data/mst.json').then(res => res.json()),
   style: fetch('style/cy-style.json').then(res => res.json()),
   layout: { name: 'grid' },
-  autoungrabify: true
+  autoungrabify: true,
+  minZoom: -1,
+  maxZoom: 5,
+  wheelSensitivity: 0.5,
 });
 
 const search = new autoComplete({
