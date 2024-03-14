@@ -34,8 +34,15 @@ const search = new autoComplete({
   }
 });
 
+function removeSplashScreen() {
+  const splashScreen = document.getElementById("splash");
+  if (splashScreen) {
+    splashScreen.remove();
+  }
+}
+
 function searchFeats(featName) {
-  document.getElementById("splash").remove();
+  removeSplashScreen();
   const feat = cy.getElementById(featName.toCamelCase());
   const featTree = feat.predecessors().union(feat.successors()).union(feat);
   cy.nodes().removeClass('visible');
