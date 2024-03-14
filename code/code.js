@@ -19,12 +19,13 @@ const search = new autoComplete({
   resultItem: {
     highlight: true,
   },
-  submit: true,
+  submit: false,
   events: {
     input: {
       selection: (event) => {
         const selection = event.detail.selection.value;
         search.input.value = selection;
+        searchFeats(selection);
       }
     }
   }
@@ -66,7 +67,7 @@ function displayFeat(featNode) {
   setFeatSection(featData, 'normal');
   setFeatSection(featData, 'special');
   document.getElementById('feat-info').classList.remove('d-none');
-  featNode.neighborhood('edge').select()
+  featNode.neighborhood('edge').select();
 }
 
 document.getElementById('search').addEventListener("change", event => {
