@@ -12,8 +12,20 @@ function prerequisiteId(prerequisite) {
     .toCamelCase();
 }
 
+function findSupplements(feats) {
+  const supplements = new Set();
+  feats.map(feat => feat.fulltext).forEach(html => {
+    const container = document.createElement('div');
+    container.innerHTML = html;
+    const sups = Array.from(container.getElementsByTagName('sup'));
+    sups.map(sup => sup.textContent).forEach(sup => supplements.add(sup))
+  });
+  console.log(supplements)
+}
+
 async function initializeGraph() {
   const feats = await fetch('data/Feats-19Jan2020.json').then(res => res.json());
+  // findSupplements(feats);
   const nodes = feats.filter(feat => feat.type.toLowerCase() != "mythic")
     .map(feat => {
       feat.id = feat.name.toCamelCase();

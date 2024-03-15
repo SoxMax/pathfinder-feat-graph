@@ -22,7 +22,8 @@
     "style": {
       "curve-style": "straight",
       "target-arrow-shape": "triangle-backcurve",
-      "events": "no"
+      "events": "no",
+      "line-cap": "round"
     }
   },
   {
