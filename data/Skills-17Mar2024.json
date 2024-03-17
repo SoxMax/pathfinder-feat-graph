@@ -1,0 +1,134 @@
+[
+    {
+        "id": "acrobatics",
+        "name": "Acrobatics"
+    },
+    {
+        "id": "appraise",
+        "name": "Appraise"
+    },
+    {
+        "id": "bluff",
+        "name": "Bluff"
+    },
+    {
+        "id": "climb",
+        "name": "Climb"
+    },
+    {
+        "id": "craft",
+        "name": "Craft"
+    },
+    {
+        "id": "diplomacy",
+        "name": "Diplomacy"
+    },
+    {
+        "id": "disableDevice",
+        "name": "Disable Device"
+    },
+    {
+        "id": "disguise",
+        "name": "Disguise"
+    },
+    {
+        "id": "escapeArtist",
+        "name": "Escape Artist"
+    },
+    {
+        "id": "fly",
+        "name": "Fly"
+    },
+    {
+        "id": "handleAnimal",
+        "name": "Handle Animal"
+    },
+    {
+        "id": "heal",
+        "name": "Heal"
+    },
+    {
+        "id": "knowledgeArcana",
+        "name": "Knowledge (Arcana)"
+    },
+    {
+        "id": "knowledgeDungeoneering",
+        "name": "Knowledge (Dungeoneering)"
+    },
+    {
+        "id": "knowledgeEngineering",
+        "name": "Knowledge (Engineering)"
+    },
+    {
+        "id": "knowledgeGeography",
+        "name": "Knowledge (Geography)"
+    },
+    {
+        "id": "knowledgeHistory",
+        "name": "Knowledge (History)"
+    },
+    {
+        "id": "knowledgeLocal",
+        "name": "Knowledge (Local)"
+    },
+    {
+        "id": "knowledgeNature",
+        "name": "Knowledge (Nature)"
+    },
+    {
+        "id": "knowledgeNobility",
+        "name": "Knowledge (Nobility)"
+    },
+    {
+        "id": "knowledgePlanes",
+        "name": "Knowledge (Planes)"
+    },
+    {
+        "id": "knowledgeReligion",
+        "name": "Knowledge (Religion)"
+    },
+    {
+        "id": "perception",
+        "name": "Perception"
+    },
+    {
+        "id": "perform",
+        "name": "Perform"
+    },
+    {
+        "id": "profession",
+        "name": "Profession"
+    },
+    {
+        "id": "ride",
+        "name": "Ride"
+    },
+    {
+        "id": "senseMotive",
+        "name": "Sense Motive"
+    },
+    {
+        "id": "sleightOfHand",
+        "name": "Sleight of Hand"
+    },
+    {
+        "id": "spellcraft",
+        "name": "Spellcraft"
+    },
+    {
+        "id": "stealth",
+        "name": "Stealth"
+    },
+    {
+        "id": "survival",
+        "name": "Survival"
+    },
+    {
+        "id": "swim",
+        "name": "Swim"
+    },
+    {
+        "id": "useMagicDevice",
+        "name": "Use Magic Device"
+    }
+]
