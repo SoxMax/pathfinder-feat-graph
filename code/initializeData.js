@@ -31,35 +31,50 @@ function processRawFeat(feat) {
   }
   if (feat.teamwork) {
     categories.push("Teamwork");
-  } else if (feat.critical) {
+  }
+  if (feat.critical) {
     categories.push("Critical");
-  } else if (feat.grit) {
+  }
+  if (feat.grit) {
     categories.push("Grit");
-  } else if (feat.style) {
+  }
+  if (feat.style) {
     categories.push("Style");
-  } else if (feat.performance) {
+  }
+  if (feat.performance) {
     categories.push("Performance");
-  } else if (feat.panache) {
+  }
+  if (feat.panache) {
     categories.push("Panache");
-  } else if (feat.betrayal) {
+  }
+  if (feat.betrayal) {
     categories.push("Betrayal");
-  } else if (feat.targeting) {
+  }
+  if (feat.targeting) {
     categories.push("Targeting");
-  } else if (feat.esoteric) {
+  }
+  if (feat.esoteric) {
     categories.push("Esoteric");
-  } else if (feat.stare) {
+  }
+  if (feat.stare) {
     categories.push("Stare");
-  } else if (feat.weapon_mastery) {
+  }
+  if (feat.weapon_mastery) {
     categories.push("Weapon Mastery");
-  } else if (feat.item_mastery) {
+  }
+  if (feat.item_mastery) {
     categories.push("Item Mastery");
-  } else if (feat.armor_mastery) {
+  }
+  if (feat.armor_mastery) {
     categories.push("Armor Mastery");
-  } else if (feat.shield_mastery) {
+  }
+  if (feat.shield_mastery) {
     categories.push("Shield Mastery");
-  } else if (feat.blood_hex) {
+  } 
+  if (feat.blood_hex) {
     categories.push("Blood Hex");
-  } else if (feat.trick) {
+  }
+  if (feat.trick) {
     categories.push("Trick");
   }
   if (categories.length = 0) {
