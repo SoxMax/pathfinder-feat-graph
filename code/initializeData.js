@@ -77,6 +77,7 @@ function processRawFeat(feat) {
     normal: feat.normal,
     special: feat.special,
     goal: feat.goal,
+    completionBenefit: feat.completion_benefit,
     note: feat.note,
     printSource: feat.source,
   };
