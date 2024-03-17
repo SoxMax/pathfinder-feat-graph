@@ -57,12 +57,11 @@ function searchFeats(featName) {
   featTree.layout(dagre).run();
 }
 
-function setFeatSection(featData, section) {
+function setFeatSection(displayText, section) {
   const htmlSection = document.getElementById(`feat-${section}-section`);
   const htmlText = document.getElementById(`feat-${section}`);
-  const sectionEntry = featData[section];
-  if (sectionEntry) {
-    htmlText.textContent = sectionEntry;
+  if (displayText) {
+    htmlText.textContent = displayText;
     htmlSection.hidden = false;
   } else {
     htmlSection.hidden = true;
@@ -72,11 +71,15 @@ function setFeatSection(featData, section) {
 function displayFeat(featNode) {
   const featData = featNode.data();
   document.getElementById('feat-name').textContent = featData.name;
-  setFeatSection(featData, 'description');
-  setFeatSection(featData, 'prerequisites');
-  setFeatSection(featData, 'benefit');
-  setFeatSection(featData, 'normal');
-  setFeatSection(featData, 'special');
+  setFeatSection(featData.categories.join(", "), 'categories');
+  setFeatSection(featData.description, 'description');
+  setFeatSection(featData.prerequisites, 'prerequisites');
+  setFeatSection(featData.benefit, 'benefit');
+  setFeatSection(featData.normal, 'normal');
+  setFeatSection(featData.special, 'special');
+  setFeatSection(featData.goal, 'goal');
+  setFeatSection(featData.completionBenefit, 'completion');
+  setFeatSection(featData.note, 'note');
   document.getElementById('feat-info').classList.remove('d-none');
   featNode.neighborhood('edge').select();
 }
