@@ -18,23 +18,76 @@ function findSupplements(feats) {
     const container = document.createElement('div');
     container.innerHTML = html;
     const sups = Array.from(container.getElementsByTagName('sup'));
-    sups.map(sup => sup.textContent).forEach(sup => supplements.add(sup))
+    sups.map(sup => sup.textContent).forEach(sup => supplements.add(sup));
   });
-  console.log(supplements)
+  console.log(supplements);
+}
+
+function processRawFeat(feat) {
+  const categories = [];
+  const featType = feat.type.toLowerCase();
+  if (featType != "general") {
+    categories.push(feat.type);
+  }
+  if (feat.teamwork) {
+    categories.push("Teamwork");
+  } else if (feat.critical) {
+    categories.push("Critical");
+  } else if (feat.grit) {
+    categories.push("Grit");
+  } else if (feat.style) {
+    categories.push("Style");
+  } else if (feat.performance) {
+    categories.push("Performance");
+  } else if (feat.panache) {
+    categories.push("Panache");
+  } else if (feat.betrayal) {
+    categories.push("Betrayal");
+  } else if (feat.targeting) {
+    categories.push("Targeting");
+  } else if (feat.esoteric) {
+    categories.push("Esoteric");
+  } else if (feat.stare) {
+    categories.push("Stare");
+  } else if (feat.weapon_mastery) {
+    categories.push("Weapon Mastery");
+  } else if (feat.item_mastery) {
+    categories.push("Item Mastery");
+  } else if (feat.armor_mastery) {
+    categories.push("Armor Mastery");
+  } else if (feat.shield_mastery) {
+    categories.push("Shield Mastery");
+  } else if (feat.blood_hex) {
+    categories.push("Blood Hex");
+  } else if (feat.trick) {
+    categories.push("Trick");
+  }
+  if (categories.length = 0) {
+    categories.push(feat.type);
+  }
+
+  return {
+    id: feat.name.toCamelCase(),
+    name: feat.name,
+    categories: categories,
+    prerequisites: feat.prerequisites,
+    prerequisiteFeats: feat.prerequisite_feats.split(/(?:,|\|)+/).map(prereq => prerequisiteId(prereq)).filter(prereq => prereq),
+    description: feat.description,
+    benefit: feat.benefit,
+    normal: feat.normal,
+    special: feat.special,
+    goal: feat.goal,
+    note: feat.note,
+    printSource: feat.source,
+  };
 }
 
 async function initializeGraph() {
   const feats = await fetch('data/Feats-19Jan2020.json').then(res => res.json());
   // findSupplements(feats);
   const nodes = feats.filter(feat => feat.type.toLowerCase() != "mythic")
-    .map(feat => {
-      feat.id = feat.name.toCamelCase();
-      feat.prerequisite_feats = feat.prerequisite_feats.split(/(?:,|\|)+/).map(prereq => prerequisiteId(prereq)).filter(prereq => prereq);
-      delete feat.style;
-      delete feat.source;
-      return feat;
-    });
-  const links = nodes.flatMap(feat => (feat.prerequisite_feats.map(prereq => ({ id: feat.id + '|' + prereq, source: prereq, target: feat.id }))));
+    .map(feat => processRawFeat(feat));
+  const links = nodes.flatMap(feat => (feat.prerequisiteFeats.map(prereq => ({ id: feat.id + '|' + prereq, source: prereq, target: feat.id }))));
 
   const duplicates = Map.groupBy(nodes, ({ id }) => id).entries().toArray().filter(entry => entry[1].length > 1);
   console.log("Duplicates", duplicates);
