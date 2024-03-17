@@ -77,7 +77,7 @@ function processRawFeat(feat) {
   if (feat.trick) {
     categories.push("Trick");
   }
-  if (categories.length = 0) {
+  if (categories.length == 0) {
     categories.push(feat.type);
   }
 
