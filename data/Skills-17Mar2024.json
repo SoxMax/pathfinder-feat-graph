@@ -48,6 +48,10 @@
         "name": "Heal"
     },
     {
+        "id": "intimidate",
+        "name": "Intimidate"
+    },
+    {
         "id": "knowledgeArcana",
         "name": "Knowledge (Arcana)"
     },
