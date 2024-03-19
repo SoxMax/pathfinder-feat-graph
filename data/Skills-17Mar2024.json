@@ -52,44 +52,12 @@
         "name": "Intimidate"
     },
     {
-        "id": "knowledgeArcana",
-        "name": "Knowledge (Arcana)"
+        "id": "knowledge",
+        "name": "Knowledge"
     },
     {
-        "id": "knowledgeDungeoneering",
-        "name": "Knowledge (Dungeoneering)"
-    },
-    {
-        "id": "knowledgeEngineering",
-        "name": "Knowledge (Engineering)"
-    },
-    {
-        "id": "knowledgeGeography",
-        "name": "Knowledge (Geography)"
-    },
-    {
-        "id": "knowledgeHistory",
-        "name": "Knowledge (History)"
-    },
-    {
-        "id": "knowledgeLocal",
-        "name": "Knowledge (Local)"
-    },
-    {
-        "id": "knowledgeNature",
-        "name": "Knowledge (Nature)"
-    },
-    {
-        "id": "knowledgeNobility",
-        "name": "Knowledge (Nobility)"
-    },
-    {
-        "id": "knowledgePlanes",
-        "name": "Knowledge (Planes)"
-    },
-    {
-        "id": "knowledgeReligion",
-        "name": "Knowledge (Religion)"
+        "id": "linguistics",
+        "name": "Linguistics"
     },
     {
         "id": "perception",
