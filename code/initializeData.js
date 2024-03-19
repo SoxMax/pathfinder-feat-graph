@@ -18,19 +18,22 @@ function findSupplements(feats) {
 }
 
 function idFromPrerequisiteFeat(prerequisite) {
-  return prerequisite.trim()
-    .replace(/ *\([^)]*\) */g, "") // removes paren content
+  return prerequisite
+    .replace(/ *\([^)]*\) */g, '') // removes paren content
+    .trim()
     .toCamelCase();
 }
 
 function idFromPrerequisiteSkill(prerequisite) {
-  return prerequisite.trim()
-    .toCamelCase()
-    .replace(/\d+/g, ''); // removes numbers
+  return prerequisite
+    .replace(/ *\([^)]*\) */g, '')
+    .replace(/\d+/g, '') // removes numbers
+    .trim()
+    .toCamelCase();
 }
 
 function processRawFeat(feat) {
-  feat.id = feat.name.toCamelCase(),
+  feat.id = feat.name.toCamelCase();
   feat.prerequisite_feats = feat.prerequisite_feats.split(/(?:,|\|)+/).map(prereq => idFromPrerequisiteFeat(prereq)).filter(prereq => prereq);
   feat.prerequisite_skills = feat.prerequisite_skills.split(/(?:,|\|)+/).map(prereq => idFromPrerequisiteSkill(prereq)).filter(prereq => prereq);
   return feat;
@@ -125,6 +128,7 @@ async function initializeGraph() {
   cy.add(nodes.map(node => ({ group: 'nodes', data: node })));
   cy.add(skills.map(node => ({ group: 'nodes', data: node })));
   cy.add(featLinks.map(link => ({ group: 'edges', data: link })));
+  cy.add(skillLinks.map(link => ({ group: 'edges', data: link })));
 }
 
 function pruneNode(node) {
