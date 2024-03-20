@@ -2,131 +2,157 @@
     {
         "id": "acrobatics",
         "name": "Acrobatics",
-        "ability": "Dexterity"
+        "ability": "Dexterity",
+        "armorCheckPenalty": true
     },
     {
         "id": "appraise",
         "name": "Appraise",
-        "ability": "Intelligence"
+        "ability": "Intelligence",
+        "armorCheckPenalty": false
     },
     {
         "id": "bluff",
         "name": "Bluff",
-        "ability": "Charisma"
+        "ability": "Charisma",
+        "armorCheckPenalty": false
     },
     {
         "id": "climb",
         "name": "Climb",
-        "ability": "Strength"
+        "ability": "Strength",
+        "armorCheckPenalty": true
     },
     {
         "id": "craft",
         "name": "Craft",
-        "ability": "Intelligence"
+        "ability": "Intelligence",
+        "armorCheckPenalty": false
     },
     {
         "id": "diplomacy",
         "name": "Diplomacy",
-        "ability": "Charisma"
+        "ability": "Charisma",
+        "armorCheckPenalty": false
     },
     {
         "id": "disableDevice",
         "name": "Disable Device",
-        "ability": "Dexterity"
+        "ability": "Dexterity",
+        "armorCheckPenalty": true
     },
     {
         "id": "disguise",
         "name": "Disguise",
-        "ability": "Charisma"
+        "ability": "Charisma",
+        "armorCheckPenalty": false
     },
     {
         "id": "escapeArtist",
         "name": "Escape Artist",
-        "ability": "Dexterity"
+        "ability": "Dexterity",
+        "armorCheckPenalty": true
     },
     {
         "id": "fly",
         "name": "Fly",
-        "ability": "Dexterity"
+        "ability": "Dexterity",
+        "armorCheckPenalty": true
     },
     {
         "id": "handleAnimal",
         "name": "Handle Animal",
-        "ability": "Charisma"
+        "ability": "Charisma",
+        "armorCheckPenalty": false
     },
     {
         "id": "heal",
         "name": "Heal",
-        "ability": "Wisdom"
+        "ability": "Wisdom",
+        "armorCheckPenalty": false
     },
     {
         "id": "intimidate",
         "name": "Intimidate",
-        "ability": "Charisma"
+        "ability": "Charisma",
+        "armorCheckPenalty": false
     },
     {
         "id": "knowledge",
         "name": "Knowledge",
-        "ability": "Intelligence"
+        "ability": "Intelligence",
+        "armorCheckPenalty": false
     },
     {
         "id": "linguistics",
         "name": "Linguistics",
-        "ability": "Intelligence"
+        "ability": "Intelligence",
+        "armorCheckPenalty": false
     },
     {
         "id": "perception",
         "name": "Perception",
-        "ability": "Wisdom"
+        "ability": "Wisdom",
+        "armorCheckPenalty": false
     },
     {
         "id": "perform",
         "name": "Perform",
-        "ability": "Charisma"
+        "ability": "Charisma",
+        "armorCheckPenalty": false
     },
     {
         "id": "profession",
         "name": "Profession",
-        "ability": "Wisdom"
+        "ability": "Wisdom",
+        "armorCheckPenalty": false
     },
     {
         "id": "ride",
         "name": "Ride",
-        "ability": "Dexterity"
+        "ability": "Dexterity",
+        "armorCheckPenalty": true
     },
     {
         "id": "senseMotive",
         "name": "Sense Motive",
-        "ability": "Wisdom"
+        "ability": "Wisdom",
+        "armorCheckPenalty": false
     },
     {
         "id": "sleightOfHand",
         "name": "Sleight of Hand",
-        "ability": "Dexterity"
+        "ability": "Dexterity",
+        "armorCheckPenalty": true
     },
     {
         "id": "spellcraft",
         "name": "Spellcraft",
-        "ability": "Intelligence"
+        "ability": "Intelligence",
+        "armorCheckPenalty": false
     },
     {
         "id": "stealth",
         "name": "Stealth",
-        "ability": "Dexterity"
+        "ability": "Dexterity",
+        "armorCheckPenalty": true
     },
     {
         "id": "survival",
         "name": "Survival",
-        "ability": "Wisdom"
+        "ability": "Wisdom",
+        "armorCheckPenalty": false
     },
     {
         "id": "swim",
         "name": "Swim",
-        "ability": "Strength"
+        "ability": "Strength",
+        "armorCheckPenalty": true
     },
     {
         "id": "useMagicDevice",
         "name": "Use Magic Device",
-        "ability": "Charisma"
+        "ability": "Charisma",
+        "armorCheckPenalty": false
     }
 ]
