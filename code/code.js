@@ -71,7 +71,7 @@ function setFeatSection(displayText, section) {
 function displayFeat(featNode) {
   const featData = featNode.data();
   document.getElementById('feat-name').textContent = featData.name;
-  setFeatSection(featData.categories.join(", "), 'categories');
+  setFeatSection(featData.categories?.join(", "), 'categories');
   setFeatSection(featData.description, 'description');
   setFeatSection(featData.prerequisites, 'prerequisites');
   setFeatSection(featData.benefit, 'benefit');
