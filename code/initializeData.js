@@ -98,8 +98,9 @@ function generateFeatNode(feat) {
   }
 
   return {
-    id: feat.name.toCamelCase(),
+    id: feat.id,
     name: feat.name,
+    type: "feat",
     categories: categories,
     prerequisites: feat.prerequisites,
     description: feat.description,
@@ -113,20 +114,27 @@ function generateFeatNode(feat) {
   };
 }
 
+function generateSkillNode(skill) {
+  skill.type = "skill";
+  return skill;
+}
+
 async function initializeGraph() {
   const rawFeats = await fetch('data/Feats-19Jan2020.json').then(res => res.json());
-  const skills = await fetch('data/Skills-17Mar2024.json').then(res => res.json());
+  const rawSkills = await fetch('data/Skills-17Mar2024.json').then(res => res.json());
   // findSupplements(feats);
   const feats = rawFeats.filter(feat => feat.type.toLowerCase() != "mythic").map(feat => processRawFeat(feat));
-  const nodes = feats.map(feat => generateFeatNode(feat));
+  const featNodes = feats.map(feat => generateFeatNode(feat));
+  const skillNodes = rawSkills.map(skill => generateSkillNode(skill));
   const featLinks = feats.flatMap(feat => (feat.prerequisite_feats.map(prereq => ({ id: feat.id + '|' + prereq, source: prereq, target: feat.id }))));
   const skillLinks = feats.flatMap(feat => (feat.prerequisite_skills.map(prereq => ({ id: feat.id + '|' + prereq, source: prereq, target: feat.id }))));
 
-  const duplicates = Map.groupBy(nodes, ({ id }) => id).entries().toArray().filter(entry => entry[1].length > 1);
-  console.log("Duplicates", duplicates);
+  // check for duplicate feats
+  // const duplicates = Map.groupBy(feats, ({ id }) => id).entries().toArray().filter(entry => entry[1].length > 1);
+  // console.log("Duplicates", duplicates);
   cy.add({ group: 'nodes', data: { id: "weaponProficiency", name: "Weapon Proficiency" } });
-  cy.add(nodes.map(node => ({ group: 'nodes', data: node })));
-  cy.add(skills.map(node => ({ group: 'nodes', data: node })));
+  cy.add(featNodes.map(node => ({ group: 'nodes', data: node })));
+  cy.add(skillNodes.map(node => ({ group: 'nodes', data: node })));
   cy.add(featLinks.map(link => ({ group: 'edges', data: link })));
   cy.add(skillLinks.map(link => ({ group: 'edges', data: link })));
 }
