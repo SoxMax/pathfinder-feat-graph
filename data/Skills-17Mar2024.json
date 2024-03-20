@@ -1,106 +1,132 @@
 [
     {
         "id": "acrobatics",
-        "name": "Acrobatics"
+        "name": "Acrobatics",
+        "ability": "Dexterity"
     },
     {
         "id": "appraise",
-        "name": "Appraise"
+        "name": "Appraise",
+        "ability": "Intelligence"
     },
     {
         "id": "bluff",
-        "name": "Bluff"
+        "name": "Bluff",
+        "ability": "Charisma"
     },
     {
         "id": "climb",
-        "name": "Climb"
+        "name": "Climb",
+        "ability": "Strength"
     },
     {
         "id": "craft",
-        "name": "Craft"
+        "name": "Craft",
+        "ability": "Intelligence"
     },
     {
         "id": "diplomacy",
-        "name": "Diplomacy"
+        "name": "Diplomacy",
+        "ability": "Charisma"
     },
     {
         "id": "disableDevice",
-        "name": "Disable Device"
+        "name": "Disable Device",
+        "ability": "Dexterity"
     },
     {
         "id": "disguise",
-        "name": "Disguise"
+        "name": "Disguise",
+        "ability": "Charisma"
     },
     {
         "id": "escapeArtist",
-        "name": "Escape Artist"
+        "name": "Escape Artist",
+        "ability": "Dexterity"
     },
     {
         "id": "fly",
-        "name": "Fly"
+        "name": "Fly",
+        "ability": "Dexterity"
     },
     {
         "id": "handleAnimal",
-        "name": "Handle Animal"
+        "name": "Handle Animal",
+        "ability": "Charisma"
     },
     {
         "id": "heal",
-        "name": "Heal"
+        "name": "Heal",
+        "ability": "Wisdom"
     },
     {
         "id": "intimidate",
-        "name": "Intimidate"
+        "name": "Intimidate",
+        "ability": "Charisma"
     },
     {
         "id": "knowledge",
-        "name": "Knowledge"
+        "name": "Knowledge",
+        "ability": "Intelligence"
     },
     {
         "id": "linguistics",
-        "name": "Linguistics"
+        "name": "Linguistics",
+        "ability": "Intelligence"
     },
     {
         "id": "perception",
-        "name": "Perception"
+        "name": "Perception",
+        "ability": "Wisdom"
     },
     {
         "id": "perform",
-        "name": "Perform"
+        "name": "Perform",
+        "ability": "Charisma"
     },
     {
         "id": "profession",
-        "name": "Profession"
+        "name": "Profession",
+        "ability": "Wisdom"
     },
     {
         "id": "ride",
-        "name": "Ride"
+        "name": "Ride",
+        "ability": "Dexterity"
     },
     {
         "id": "senseMotive",
-        "name": "Sense Motive"
+        "name": "Sense Motive",
+        "ability": "Wisdom"
     },
     {
         "id": "sleightOfHand",
-        "name": "Sleight of Hand"
+        "name": "Sleight of Hand",
+        "ability": "Dexterity"
     },
     {
         "id": "spellcraft",
-        "name": "Spellcraft"
+        "name": "Spellcraft",
+        "ability": "Intelligence"
     },
     {
         "id": "stealth",
-        "name": "Stealth"
+        "name": "Stealth",
+        "ability": "Dexterity"
     },
     {
         "id": "survival",
-        "name": "Survival"
+        "name": "Survival",
+        "ability": "Wisdom"
     },
     {
         "id": "swim",
-        "name": "Swim"
+        "name": "Swim",
+        "ability": "Strength"
     },
     {
         "id": "useMagicDevice",
-        "name": "Use Magic Device"
+        "name": "Use Magic Device",
+        "ability": "Charisma"
     }
 ]
