@@ -14,10 +14,6 @@ const cy = cytoscape({
   selectionType: "single"
 });
 
-cy.on('layoutstop', function(event) {
-  console.log("Layout Finished!");
-})
-
 const search = new autoComplete({
   selector: "#search",
   placeHolder: "Search...",
@@ -27,7 +23,7 @@ const search = new autoComplete({
   resultItem: {
     highlight: true,
   },
-  submit: false,
+  submit: true,
   events: {
     input: {
       selection: (event) => {
@@ -89,7 +85,7 @@ function displayFeat(featNode) {
   featNode.neighborhood('edge').select();
 }
 
-document.getElementById('search').addEventListener("change", event => {
+document.getElementById('search').addEventListener("search", event => {
   searchFeats(event.target.value);
 });
 
