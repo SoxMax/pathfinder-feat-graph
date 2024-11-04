@@ -6,12 +6,17 @@ const cy = cytoscape({
   container: document.getElementById('cy'), // container to render in
   elements: fetch('data/mst.json').then(res => res.json()),
   style: fetch('style/cy-style.json').then(res => res.json()),
-  layout: { name: 'grid' },
+  layout: { name: 'null' },
   autoungrabify: true,
   minZoom: 0.2,
   maxZoom: 5,
   wheelSensitivity: 0.5,
+  selectionType: "single"
 });
+
+cy.on('layoutstop', function(event) {
+  console.log("Layout Finished!");
+})
 
 const search = new autoComplete({
   selector: "#search",
