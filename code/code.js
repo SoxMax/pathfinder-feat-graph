@@ -6,11 +6,12 @@ const cy = cytoscape({
   container: document.getElementById('cy'), // container to render in
   elements: fetch('data/mst.json').then(res => res.json()),
   style: fetch('style/cy-style.json').then(res => res.json()),
-  layout: { name: 'grid' },
+  layout: { name: 'null' },
   autoungrabify: true,
   minZoom: 0.2,
   maxZoom: 5,
   wheelSensitivity: 0.5,
+  selectionType: "single"
 });
 
 const search = new autoComplete({
@@ -22,7 +23,7 @@ const search = new autoComplete({
   resultItem: {
     highlight: true,
   },
-  submit: false,
+  submit: true,
   events: {
     input: {
       selection: (event) => {
@@ -32,6 +33,10 @@ const search = new autoComplete({
       }
     }
   }
+});
+
+document.getElementById('search').addEventListener("search", event => {
+  searchFeats(event.target.value);
 });
 
 function removeSplashScreen() {
@@ -83,10 +88,6 @@ function displayFeat(featNode) {
   document.getElementById('feat-info').classList.remove('d-none');
   featNode.neighborhood('edge').select();
 }
-
-document.getElementById('search').addEventListener("change", event => {
-  searchFeats(event.target.value);
-});
 
 cy.on('select', 'node', function (event) {
   displayFeat(event.target);
