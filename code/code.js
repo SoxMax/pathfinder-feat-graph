@@ -35,6 +35,10 @@ const search = new autoComplete({
   }
 });
 
+document.getElementById('search').addEventListener("search", event => {
+  searchFeats(event.target.value);
+});
+
 function removeSplashScreen() {
   const splashScreen = document.getElementById("splash");
   if (splashScreen) {
@@ -84,10 +88,6 @@ function displayFeat(featNode) {
   document.getElementById('feat-info').classList.remove('d-none');
   featNode.neighborhood('edge').select();
 }
-
-document.getElementById('search').addEventListener("search", event => {
-  searchFeats(event.target.value);
-});
 
 cy.on('select', 'node', function (event) {
   displayFeat(event.target);
