@@ -35,8 +35,10 @@ const search = new autoComplete({
   }
 });
 
-document.getElementById('search').addEventListener("search", event => {
-  searchFeats(event.target.value);
+document.getElementById('search').addEventListener("keyup", event => {
+  if (event.key === "Enter") {
+    searchFeats(event.target.value);
+  }
 });
 
 function removeSplashScreen() {
